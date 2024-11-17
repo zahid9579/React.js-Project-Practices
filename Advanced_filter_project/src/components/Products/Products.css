@@ -1,0 +1,99 @@
+/* Parent container for the cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  gap: 20px; /* Space between cards */
+  justify-content: flex-start; /* Align cards to the left */
+  margin-left: 250px; /* Space on the left for other components */
+}
+
+/* Individual card styling */
+.card {
+  flex: 1 1 calc(30% - 20px); /* Make each card take 30% width with space for the gap */
+  max-width: calc(30% - 20px); /* Ensure cards fit within the row */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-details {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.card-reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.ratings-star {
+  color: gold;
+  font-size: 16px;
+}
+
+.total-reviews {
+  font-size: 14px;
+  color: #555;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price del {
+  color: #888;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bag {
+  font-size: 18px;
+  color: crimson;
+  cursor: pointer;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .card-container {
+    margin-left: 150px; /* Reduce left margin for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(45% - 20px); /* Two cards per row on medium screens */
+    max-width: calc(45% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Single card per row on small screens */
+    max-width: 100%;
+  }
+}
