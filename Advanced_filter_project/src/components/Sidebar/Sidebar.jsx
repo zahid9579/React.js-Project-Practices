@@ -6,16 +6,17 @@ import Colors from './Colors/Colors'
 
 import { TiShoppingCart } from "react-icons/ti";
 
-const Sidebar = () => {
+const Sidebar = ({handleChange}) => {
+  console.log(handleChange)
   return (
    <>
    <section className='sidebar'>
       <div className='logo-container'>
         <TiShoppingCart/>
       </div>
-      <Category/>
-      <Price/>
-      <Colors/>
+      <Category handleChange={handleChange}/>
+      <Price handleChange={handleChange}/>
+      <Colors handleChange={handleChange}/>
 
 
 
